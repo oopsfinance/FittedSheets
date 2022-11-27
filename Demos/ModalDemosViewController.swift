@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FittedSheets
 
 class ModalDemosViewController: UIViewController {
 
@@ -46,6 +47,17 @@ class ModalDemosViewController: UIViewController {
         }
         
         self.sheetViewController?.handleScrollView(self.scrollView)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let options = SheetOptions(
+            useFullScreenMode: false,
+            useInlineMode: true
+        )
+        let vc = SheetViewController(controller: UIViewController(), sizes: [.fullscreen], options: options)
+        self.present(vc, animated: true)
     }
     
     func addButton(for demo: (UIViewController & Demoable).Type) {

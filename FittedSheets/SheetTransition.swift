@@ -138,6 +138,7 @@ public class SheetTransition: NSObject, UIViewControllerAnimatedTransitioning {
         let topSafeArea = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.compatibleSafeAreaInsets.top ?? 0
 
         presenter.view.layer.transform = CATransform3DConcat(CATransform3DMakeTranslation(0, (1 - percentComplete) * topSafeArea/2, 0), CATransform3DMakeScale(scale, scale, 1))
+        presenter.view.layer.cornerCurve = .continuous
         presenter.view.layer.cornerRadius = self.options.presentingViewCornerRadius * (1 - percentComplete)
         
         if SheetOptions.shrinkingNestedPresentingViewControllers {

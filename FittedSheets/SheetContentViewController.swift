@@ -26,7 +26,7 @@ public class SheetContentViewController: UIViewController {
     @available(iOS 13.0, *)
     public var cornerCurve: CALayerCornerCurve {
         get {
-            return _cornerCurve as? CALayerCornerCurve ?? CALayerCornerCurve.circular }
+            return _cornerCurve as? CALayerCornerCurve ?? CALayerCornerCurve.continuous }
         set {
             _cornerCurve = newValue
             self.updateCornerCurve()

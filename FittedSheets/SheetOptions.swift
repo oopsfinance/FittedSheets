@@ -21,12 +21,12 @@ public struct SheetOptions {
     
     public var pullBarHeight: CGFloat = 24
     
-    public var presentingViewCornerRadius: CGFloat = 12
+    public var presentingViewCornerRadius: CGFloat = 32
     public var shouldExtendBackground = true
     public var setIntrinsicHeightOnNavigationControllers = true
 
-    public var transitionAnimationOptions: UIView.AnimationOptions = [.curveEaseOut]
-    public var transitionDampening: CGFloat = 0.7
+    public var transitionAnimationOptions: UIView.AnimationOptions = [.curveEaseOut, .beginFromCurrentState]
+    public var transitionDampening: CGFloat = 1
     public var transitionDuration: TimeInterval = 0.4
     /// Transition velocity base value. Automatically adjusts based on the initial size of the sheet.
     public var transitionVelocity: CGFloat = 0.8

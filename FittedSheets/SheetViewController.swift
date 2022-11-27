@@ -81,7 +81,7 @@ public class SheetViewController: UIViewController {
     }
     
     /// The default color of the overlay background
-    public static var overlayColor = UIColor(white: 0, alpha: 0.25)
+    public static var overlayColor = UIColor.systemPurple.withAlphaComponent(0.25)
     /// The color of the overlay background
     public var overlayColor = SheetViewController.overlayColor {
         didSet {
@@ -105,14 +105,14 @@ public class SheetViewController: UIViewController {
         }
     }
     
-    public static var cornerRadius: CGFloat = 12
+    public static var cornerRadius: CGFloat = 32
     public var cornerRadius: CGFloat {
         get { return self.contentViewController.cornerRadius }
         set { self.contentViewController.cornerRadius = newValue }
     }
 
     @available(iOS 13.0, *)
-    public static var cornerCurve: CALayerCornerCurve = .circular
+    public static var cornerCurve: CALayerCornerCurve = .continuous
 
     @available(iOS 13.0, *)
     public var cornerCurve: CALayerCornerCurve {
